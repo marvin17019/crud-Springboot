@@ -1,0 +1,14 @@
+.my-custom-modal-class .modal-content {
+    background-color: lightblue;
+  }
+  .my-modal {
+    border: solid 4px blue;
+  }
+  
+  .my-modal .modal-header {
+    background-color: lime;
+  }
+  
+  .my-modal .modal-body {
+    background-color: orange;
+  }

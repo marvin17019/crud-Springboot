@@ -1,0 +1,70 @@
+<div class="modal-content d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="container-top">
+        <button class="btn btn-secondary right-button" (click)="cancel()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <h3 class="modal-title">Añada un usuario</h3>
+
+    <form [formGroup]="newProductoForm" (ngSubmit)="onSubmit()">
+        <div class="father-container">
+            <div class="child-container">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre" maxlength="50"
+                        (input)="updateNombreCounter()" (keypress)="onKeyPress($event)">
+                    <div style="margin-left: 10px; font-size: 12px; color: #999999;">{{nombreCounter}} characters remaining</div>
+                    <div *ngIf="newProductoForm.get('nombre')?.invalid && newProductoForm.get('nombre')?.touched">
+                        <small class="text-danger">El nombre es requerido</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" class="form-control" id="descripcion" formControlName="descripcion" maxlength="50"
+                        (input)="updateNombreCounter()" (keypress)="onKeyPress($event)">
+                    <div style="margin-left: 10px; font-size: 12px; color: #999999;">{{descripcion}} characters remaining</div>
+                    <div *ngIf="newProductoForm.get('descripcion')?.invalid && newProductoForm.get('descripcion')?.touched">
+                        <small class="text-danger">La descripción es requerida</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="text" class="form-control" id="precio" formControlName="precio" maxlength="1"
+                        (input)="updateNombreCounter()" (keypress)="onKeyPressTelefono($event)">
+                    <div style="margin-left: 10px; font-size: 12px; color: #999999;">{{precio}} characters remaining</div>
+                    <div *ngIf="newProductoForm.get('precio')?.invalid && newProductoForm.get('precio')?.touched">
+                        <small class="text-danger">El precio es requerido, debe ser un número válido</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="text" class="form-control" id="stock" formControlName="stock" maxlength="1"
+                        (input)="updateNombreCounter()" (keypress)="onKeyPressTelefono($event)">
+                    <div style="margin-left: 10px; font-size: 12px; color: #999999;">{{stock}} characters remaining</div>
+                    <div *ngIf="newProductoForm.get('stock')?.invalid && newProductoForm.get('stock')?.touched">
+                        <small class="text-danger">El stock es requerido, debe ser un número válido</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tipo_Producto">Tipo Producto</label>
+                    <input type="text" class="form-control" id="tipo_Producto" formControlName="tipo_Producto" maxlength="10"
+                        (input)="updateNombreCounter()" >
+                    <div style="margin-left: 10px; font-size: 12px; color: #999999;">{{stock}} characters remaining</div>
+                    <div *ngIf="newProductoForm.get('tipo_Producto')?.invalid && newProductoForm.get('tipo_Producto')?.touched">
+                        <small class="text-danger">El tipo producto es requerido, mínimo 10 caracteres</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div *ngIf="errorMensaje" class="text-danger text-center">{{ errorMensaje }}</div>
+        
+        <div class="btn-container">
+            <button type="submit" class="btn btn-success">Añadir</button>
+            <button type="button" class="btn btn-secondary cancel" (click)="cancel()">Cancelar</button>
+        </div>
+    </form>
+</div>

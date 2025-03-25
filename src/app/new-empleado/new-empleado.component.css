@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top:10px;
+}
+.father{
+  display: flex;
+}
+.father-container{
+  display: flex;
+  flex-direction: row;
+}t
+.container-top {
+  overflow: auto
+}
+.right-button {
+  float: right;
+  margin: 10px;
+}
+.title-container {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.close-button-container {
+  margin-left: 10px;
+}
+.mb-3 {
+  width: 100%;
+  max-width: 400px; /* Ancho máximo para evitar que se extienda demasiado en dispositivos grandes */
+  margin-bottom: 10px;
+}
+label{
+  margin-left: 10px;
+  margin-top:5px ;
+}
+.form-control{
+  margin: 10px;
+  width: 95%;
+  justify-content: center;
+}
+
+.btn-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top:10px;
+}
+.btn-success {
+  width: 70%;
+  max-width: 150px; /* Ancho máximo del botón */
+  margin-bottom: 15px;
+}
+.cancel{
+  width: 70%;
+  margin-left: 5px;
+  max-width: 150px; /* Ancho máximo del botón */
+  margin-bottom: 15px;
+}
+.modal-tittle{
+text-align: center; /* Centrar el texto */
+font-size: 24px; /* Tamaño de fuente */ /* Espacio superior */
+margin-bottom: 20px; /* Espacio inferior */
+color: #333; /* Color del texto */
+}
+.text-danger{
+  margin-left: 10px;
+}
+.form-group{
+  width: 400px;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .form-control {
+    width: 90%;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
